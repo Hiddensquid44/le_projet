@@ -1,7 +1,7 @@
 package composants;
 
-public class Or extends Porte2Entrees{
-    public Or(Composant In1, Composant In2){
+public class And extends Porte2Entrees{
+    public And(Composant In1, Composant In2){
         if (In1!=null){
             setIn1(In1);
         }
@@ -12,6 +12,6 @@ public class Or extends Porte2Entrees{
 
     @Override
     public String getType() {
-        return "Or";
+        return "And";
     }
 }
