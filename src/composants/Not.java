@@ -17,6 +17,10 @@ public class Not extends Porte{
         }
     }
 
+    public Not() {
+
+    }
+
     public String description(){
         String str,str1;
         if(In==null) {

@@ -10,4 +10,9 @@ public class Or extends Porte2Entrees{
         }
     }
 
+    public Or()
+    {
+
+    }
+
 }
