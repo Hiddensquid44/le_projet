@@ -26,6 +26,7 @@ public abstract class Porte2Entrees extends Porte{
             str1 = "non connecte";
         }
         else{
+            System.out.println(In1.getId());
             str1 = In1.getId();
         }
         if(In2==null) {
