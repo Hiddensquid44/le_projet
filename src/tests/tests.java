@@ -1,3 +1,5 @@
+package tests;
+
 public class tests {
 
     private static int i;
