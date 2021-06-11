@@ -1,7 +1,7 @@
 package composants;
 
 public abstract class Composant {
-    public String getID(){
+    public String getId(){
         return toString();
     }
 

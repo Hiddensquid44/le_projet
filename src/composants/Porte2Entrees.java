@@ -26,15 +26,15 @@ public abstract class Porte2Entrees extends Porte{
             str1 = "non connecte";
         }
         else{
-            str1 = In1.getID();
+            str1 = In1.getId();
         }
         if(In2==null) {
             str2 = "non connecte";
         }
         else{
-            str2 = In2.getID();
+            str2 = In2.getId();
         }
-        str = getID() + " In1 : " + str1 + " In2 : " + str2;
+        str = getId() + " in1: " + str1 + " in2: " + str2;
         return str;
     }
 }

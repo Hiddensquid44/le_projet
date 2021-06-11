@@ -23,9 +23,9 @@ public class Not extends Porte{
             str1 = "non connecte";
         }
         else{
-            str1 = In.getID();
+            str1 = In.getId();
         }
-        str = " In : " + str1;
+        str = getId() + " in: " + str1;
         return str;
     }
 }
