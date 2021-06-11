@@ -1,8 +1,6 @@
 package tests;
 
-import composants.And;
-import composants.Not;
-import composants.Or;
+import composants.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -39,12 +37,27 @@ public class tests {
         assertEquals(wanted, desc);
     }
 
-    /*@Test
-    public void TestGetEtatAnd() {
+    @Test
+    public void TestInfoVanne() {
         And and = new And();
+        Not not = new Not();
+        Vanne vanne = new Vanne(and);
+        String desc = vanne.description();
+        System.out.println("TestInfoVanne : " + desc);
+        String wanted = vanne.getId() + " in: " + and.getId();
+        assertEquals(wanted, desc);
+    }
+
+    @Test
+    public void TestGetEtatAnd() {
+        Interrupteur int1 = new Interrupteur();
+        Interrupteur int2 = new Interrupteur();
+        int1.on;
+        int2.off;
+        And and = new And(int1, int2);
         Boolean etat = and.getEtat();
         System.out.println("TestGetEtatAnd : " + etat.toString());
         Boolean wanted = and.getEtat() + " in: " + and.getId();
         assertEquals(wanted, etat);
-    }*/
+    }
 }
