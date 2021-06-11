@@ -35,7 +35,9 @@ public class Not extends Porte{
     }
 
     public boolean getEtat() throws NonConnecteException {
-        boolean etat;
-        return etat;
+        if (In == null) {
+            throw new NonConnecteException();
+        }
+        return !In.getEtat();
     }
 }

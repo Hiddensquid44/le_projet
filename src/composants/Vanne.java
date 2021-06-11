@@ -3,6 +3,14 @@ package composants;
 public class Vanne extends Composant {
     public Composant In;
 
+    public Vanne(Composant In){
+        this.In = In;
+    }
+
+    public Vanne(){
+
+    }
+
     public Composant getIn() {
         return In;
     }
