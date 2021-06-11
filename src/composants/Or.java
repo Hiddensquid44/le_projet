@@ -15,4 +15,16 @@ public class Or extends Porte2Entrees{
 
     }
 
+    public boolean getEtat() throws NonConnecteException {
+        boolean etat;
+        if (In1.getEtat()==false && In2.getEtat()==false){
+            etat=false;
+        }
+        else{
+            etat=true;
+        }
+        return etat;
+    }
+
+
 }

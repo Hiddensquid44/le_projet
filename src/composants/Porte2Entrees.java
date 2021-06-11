@@ -20,6 +20,7 @@ public abstract class Porte2Entrees extends Porte{
         In2 = in2;
     }
 
+    @Override
     public String description(){
         String str,str1,str2;
         if(In1==null) {

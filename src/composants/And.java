@@ -13,4 +13,9 @@ public class And extends Porte2Entrees{
     public And(){
 
     }
+
+    public boolean getEtat() throws NonConnecteException {
+        boolean etat;
+        return etat;
+    }
 }

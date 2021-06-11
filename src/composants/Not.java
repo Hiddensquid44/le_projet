@@ -21,6 +21,7 @@ public class Not extends Porte{
 
     }
 
+    @Override
     public String description(){
         String str,str1;
         if(In==null) {
@@ -31,5 +32,10 @@ public class Not extends Porte{
         }
         str = getId() + " in: " + str1;
         return str;
+    }
+
+    public boolean getEtat() throws NonConnecteException {
+        boolean etat;
+        return etat;
     }
 }
