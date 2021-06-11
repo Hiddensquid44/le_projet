@@ -10,8 +10,4 @@ public class Or extends Porte2Entrees{
         }
     }
 
-    @Override
-    public String getType() {
-        return "Or";
-    }
 }

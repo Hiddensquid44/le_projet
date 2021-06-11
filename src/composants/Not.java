@@ -25,7 +25,7 @@ public class Not extends Porte{
         else{
             str1 = In.getID();
         }
-        str = "NOT@" + getID() + " In : " + str1;
+        str = " In : " + str1;
         return str;
     }
 }

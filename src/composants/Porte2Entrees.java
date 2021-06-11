@@ -20,8 +20,6 @@ public abstract class Porte2Entrees extends Porte{
         In2 = in2;
     }
 
-    public abstract String getType();
-
     public String description(){
         String str,str1,str2;
         if(In1==null) {
@@ -36,7 +34,7 @@ public abstract class Porte2Entrees extends Porte{
         else{
             str2 = In2.getID();
         }
-        str = getType() + "@" + getID() + " In1 : " + str1 + " In2 : " + str2;
+        str = getID() + " In1 : " + str1 + " In2 : " + str2;
         return str;
     }
 }

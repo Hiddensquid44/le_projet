@@ -9,9 +9,4 @@ public class And extends Porte2Entrees{
             setIn1(In2);
         }
     }
-
-    @Override
-    public String getType() {
-        return "And";
-    }
 }
