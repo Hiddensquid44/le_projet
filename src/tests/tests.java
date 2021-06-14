@@ -179,7 +179,7 @@ public class tests {
             int1.on();
             not.setIn(int1);
             etatNot = not.getEtat();
-            System.out.println("In1 : " + int1.getEtat() + "\nEtat : " + etatNot.toString());
+            System.out.println("In : " + int1.getEtat() + "\nEtat : " + etatNot.toString());
             System.out.println("");
         }catch(NonConnecteException e){
             e.printStackTrace();
