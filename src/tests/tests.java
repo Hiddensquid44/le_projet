@@ -60,6 +60,17 @@ public class tests {
         System.out.println("");
 
         try {
+            int1.off();
+            int2.off();
+            etatAnd = and.getEtat();
+            System.out.println("In1 : " + int1.getEtat() + "\nIn2 : " + int2.getEtat() + "\nEtat : " + etatAnd.toString());
+            System.out.println("");
+        }catch(NonConnecteException e){
+            e.printStackTrace();
+        }
+        assertEquals(false, etatAnd);
+
+        try {
             int1.on();
             int2.off();
             etatAnd = and.getEtat();
@@ -69,6 +80,30 @@ public class tests {
             e.printStackTrace();
         }
         assertEquals(false, etatAnd);
+
+        try {
+            int1.off();
+            int2.on();
+            etatAnd = and.getEtat();
+            System.out.println("In1 : " + int1.getEtat() + "\nIn2 : " + int2.getEtat() + "\nEtat : " + etatAnd.toString());
+            System.out.println("");
+        }catch(NonConnecteException e){
+            e.printStackTrace();
+        }
+        assertEquals(false, etatAnd);
+
+        try {
+            int1.on();
+            int2.on();
+            etatAnd = and.getEtat();
+            System.out.println("In1 : " + int1.getEtat() + "\nIn2 : " + int2.getEtat() + "\nEtat : " + etatAnd.toString());
+            System.out.println("");
+        }catch(NonConnecteException e){
+            e.printStackTrace();
+        }
+        assertEquals(true, etatAnd);
+
+
         System.out.println("");
         System.out.println("");
     }
