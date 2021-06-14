@@ -27,4 +27,8 @@ public class And extends Porte2Entrees{
         }
         return etat;
     }
+
+    public String getType() {
+        return "And";
+    }
 }

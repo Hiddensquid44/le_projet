@@ -38,4 +38,8 @@ public class Vanne extends Composant {
         }
         return In.getEtat();
     }
+
+    public String getType() {
+        return "Vanne";
+    }
 }

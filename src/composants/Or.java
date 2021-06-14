@@ -6,7 +6,7 @@ public class Or extends Porte2Entrees{
             setIn1(In1);
         }
         if (In2!=null){
-            setIn1(In2);
+            setIn2(In2);
         }
     }
 
@@ -27,6 +27,10 @@ public class Or extends Porte2Entrees{
             etat=true;
         }
         return etat;
+    }
+
+    public String getType() {
+        return "Or";
     }
 
 

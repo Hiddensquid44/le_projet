@@ -18,4 +18,9 @@ public class Interrupteur extends Composant{
     public String description() {
         return getId();
     }
+
+    @Override
+    public String getType() {
+        return "Interrupteur";
+    }
 }

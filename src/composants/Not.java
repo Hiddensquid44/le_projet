@@ -40,4 +40,8 @@ public class Not extends Porte{
         }
         return !In.getEtat();
     }
+
+    public String getType() {
+        return "Not";
+    }
 }
