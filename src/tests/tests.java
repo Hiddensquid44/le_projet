@@ -64,6 +64,7 @@ public class tests {
             int2.off();
             etatAnd = and.getEtat();
             System.out.println("In1 : " + int1.getEtat() + "\nIn2 : " + int2.getEtat() + "\nEtat : " + etatAnd.toString());
+            System.out.println("");
         }catch(NonConnecteException e){
             e.printStackTrace();
         }
@@ -81,11 +82,15 @@ public class tests {
         Or or = new Or();
         or.setIn1(int1);
         or.setIn2(int2);
+        System.out.println("TestGetEtatOr : ");
+        System.out.println("");
 
         try {
             int1.off();
             int2.off();
             etatOr = or.getEtat();
+            System.out.println("In1 : " + int1.getEtat() + "\nIn2 : " + int2.getEtat() + "\nEtat : " + etatOr.toString());
+            System.out.println("");
         }catch(NonConnecteException e){
             e.printStackTrace();
         }
@@ -95,6 +100,8 @@ public class tests {
             int1.on();
             int2.off();
             etatOr = or.getEtat();
+            System.out.println("In1 : " + int1.getEtat() + "\nIn2 : " + int2.getEtat() + "\nEtat : " + etatOr.toString());
+            System.out.println("");
         }catch(NonConnecteException e){
             e.printStackTrace();
         }
@@ -104,6 +111,8 @@ public class tests {
             int1.off();
             int2.on();
             etatOr = or.getEtat();
+            System.out.println("In1 : " + int1.getEtat() + "\nIn2 : " + int2.getEtat() + "\nEtat : " + etatOr.toString());
+            System.out.println("");
         }catch(NonConnecteException e){
             e.printStackTrace();
         }
@@ -113,10 +122,14 @@ public class tests {
             int1.on();
             int2.on();
             etatOr = or.getEtat();
+            System.out.println("In1 : " + int1.getEtat() + "\nIn2 : " + int2.getEtat() + "\nEtat : " + etatOr.toString());
+            System.out.println("");
         }catch(NonConnecteException e){
             e.printStackTrace();
         }
         assertEquals(true, etatOr);
+        System.out.println("");
+        System.out.println("");
     }
 
     @Test
@@ -124,11 +137,15 @@ public class tests {
         Boolean etatNot=true;
         Interrupteur int1 = new Interrupteur();
         Not not = new Not();
+        System.out.println("TestGetEtatNot : ");
+        System.out.println("");
 
         try {
             int1.on();
             not.setIn(int1);
             etatNot = not.getEtat();
+            System.out.println("In1 : " + int1.getEtat() + "\nEtat : " + etatNot.toString());
+            System.out.println("");
         }catch(NonConnecteException e){
             e.printStackTrace();
         }
@@ -138,9 +155,13 @@ public class tests {
             int1.off();
             not.setIn(int1);
             etatNot = not.getEtat();
+            System.out.println("In1 : " + int1.getEtat() + "\nEtat : " + etatNot.toString());
+            System.out.println("");
         }catch(NonConnecteException e){
             e.printStackTrace();
         }
         assertEquals(true, etatNot);
+        System.out.println("");
+        System.out.println("");
     }
 }
