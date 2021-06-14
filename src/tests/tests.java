@@ -50,19 +50,97 @@ public class tests {
 
     @Test
     public void TestGetEtatAnd(){
-        Boolean etat=false;
+        Boolean etatAnd=false;
+        Interrupteur int1 = new Interrupteur();
+        Interrupteur int2 = new Interrupteur();
+        And and = new And();
+        and.setIn1(int1);
+        and.setIn2(int2);
+        System.out.println("TestGetEtatAnd : ");
+        System.out.println("");
+
         try {
-            Interrupteur int1 = new Interrupteur();
-            Interrupteur int2 = new Interrupteur();
             int1.on();
             int2.off();
-            And and = new And();
-            //And and = new And(int1, int2);
-            etat = and.getEtat();
-            System.out.println("TestGetEtatAnd : " + etat.toString());
+            etatAnd = and.getEtat();
+            System.out.println("In1 : " + int1.getEtat() + "\nIn2 : " + int2.getEtat() + "\nEtat : " + etatAnd.toString());
         }catch(NonConnecteException e){
             e.printStackTrace();
         }
-        assertEquals(false, etat);
+        assertEquals(false, etatAnd);
+        System.out.println("");
+        System.out.println("");
+    }
+
+
+    @Test
+    public void TestGetEtatOr(){
+        Boolean etatOr=false;
+        Interrupteur int1 = new Interrupteur();
+        Interrupteur int2 = new Interrupteur();
+        Or or = new Or();
+        or.setIn1(int1);
+        or.setIn2(int2);
+
+        try {
+            int1.off();
+            int2.off();
+            etatOr = or.getEtat();
+        }catch(NonConnecteException e){
+            e.printStackTrace();
+        }
+        assertEquals(false, etatOr);
+
+        try {
+            int1.on();
+            int2.off();
+            etatOr = or.getEtat();
+        }catch(NonConnecteException e){
+            e.printStackTrace();
+        }
+        assertEquals(true, etatOr);
+
+        try {
+            int1.off();
+            int2.on();
+            etatOr = or.getEtat();
+        }catch(NonConnecteException e){
+            e.printStackTrace();
+        }
+        assertEquals(true, etatOr);
+
+        try {
+            int1.on();
+            int2.on();
+            etatOr = or.getEtat();
+        }catch(NonConnecteException e){
+            e.printStackTrace();
+        }
+        assertEquals(true, etatOr);
+    }
+
+    @Test
+    public void TestGetEtatNot(){
+        Boolean etatNot=true;
+        Interrupteur int1 = new Interrupteur();
+        Not not = new Not();
+
+        try {
+            int1.on();
+            not.setIn(int1);
+            etatNot = not.getEtat();
+        }catch(NonConnecteException e){
+            e.printStackTrace();
+        }
+        assertEquals(false, etatNot);
+
+        try {
+            int1.off();
+            not.setIn(int1);
+            etatNot = not.getEtat();
+        }catch(NonConnecteException e){
+            e.printStackTrace();
+        }
+        assertEquals(true, etatNot);
     }
 }
