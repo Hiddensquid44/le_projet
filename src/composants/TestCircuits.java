@@ -1,5 +1,11 @@
 package composants;
 
+import circuit.Circuit;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class TestCircuits {
     static Composant[] tab=new Composant[7];
 
@@ -22,8 +28,10 @@ public class TestCircuits {
         tab[3]=interrupteur2;
         tab[6]=interrupteur3;
         tab[5]=not;
+        Circuit circ = new Circuit("TEST",tab);
 
-        TraceEtat(tab);
+        test(circ);
+        //TraceEtat(tab);
 
     }
 
@@ -57,5 +65,15 @@ public class TestCircuits {
             e.printStackTrace();
         }
         return etat;
+    }
+
+    static void test(Circuit circ){
+        System.out.println(circ.nomenclature());
+        System.out.println("description");
+        circ.description();
+        System.out.println("Inputs");
+        circ.getInputs();
+        System.out.println("Outputs");
+        circ.getOutputs();
     }
 }
