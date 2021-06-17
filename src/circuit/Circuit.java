@@ -57,13 +57,13 @@ public class Circuit {
         }
     }
 
-    public List<Interrupteur> getInputs(){
-        List<Interrupteur> inputs=new ArrayList();
-        for (Composant composant : composants
-             ) {
+    public List<Interrupteur> getInputs() {
+        List<Interrupteur> inputs = new ArrayList();
+        /*for (Composant composant : composants
+        ) {
             inputs.add((Interrupteur) composant);
-        }
-        return inputs;
+        }*/
+            return inputs;
     }
 
     public List<Vanne> getOutputs(){
