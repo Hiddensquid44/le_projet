@@ -59,18 +59,24 @@ public class Circuit {
 
     public List<Interrupteur> getInputs() {
         List<Interrupteur> inputs = new ArrayList();
-        /*for (Composant composant : composants
+        List<Composant> inputs_1 = new ArrayList<>();
+        inputs_1.addAll(composants);
+        inputs_1.removeIf(c -> c.getType() != "Interrupteur");
+        for (Composant composant : inputs_1
         ) {
-            inputs.add((Interrupteur) composant);
-        }*/
+            inputs.add((Interrupteur)composant);
+        }
             return inputs;
     }
 
     public List<Vanne> getOutputs(){
         List<Vanne> outputs=new ArrayList();
-        for (Composant composant : composants
+        List<Composant> outputs_1 = new ArrayList<>();
+        outputs_1.addAll(composants);
+        outputs_1.removeIf(c -> c.getType() != "Vanne");
+        for (Composant composant : outputs_1
         ) {
-            outputs.add((Vanne) composant);
+            outputs.add((Vanne)composant);
         }
         return outputs;
     }

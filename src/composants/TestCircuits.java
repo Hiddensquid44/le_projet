@@ -72,8 +72,16 @@ public class TestCircuits {
         System.out.println("description");
         circ.description();
         System.out.println("Inputs");
-        circ.getInputs();
+        List<Interrupteur> inputs = circ.getInputs();
+        for (Interrupteur interrupteur :
+                inputs) {
+            System.out.println(interrupteur.description());
+        }
         System.out.println("Outputs");
-        circ.getOutputs();
+        List<Vanne> outputs = circ.getOutputs();
+        for (Vanne vanne :
+                outputs) {
+            System.out.println(vanne.description());
+        }
     }
 }
