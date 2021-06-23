@@ -67,21 +67,27 @@ public class TestCircuits {
         return etat;
     }
 
-    static void test(Circuit circ){
+    static void test(Circuit circ) throws NonConnecteException {
+        System.out.println("nomenclature :");
         System.out.println(circ.nomenclature());
-        System.out.println("description");
+        System.out.println("description :");
         circ.description();
-        System.out.println("Inputs");
+        System.out.println("Inputs :");
         List<Interrupteur> inputs = circ.getInputs();
         for (Interrupteur interrupteur :
                 inputs) {
-            System.out.println(interrupteur.description());
+            System.out.println(interrupteur.getId());
         }
-        System.out.println("Outputs");
+        System.out.println("Outputs :");
         List<Vanne> outputs = circ.getOutputs();
         for (Vanne vanne :
                 outputs) {
-            System.out.println(vanne.description());
+            System.out.println(vanne.getId());
         }
+        System.out.println("");
+        System.out.println("On force l'interrupteur 1 à faux.");
+        inputs.get(0).off();
+        System.out.println("TraceEtat :");
+        circ.traceEtats();
     }
 }

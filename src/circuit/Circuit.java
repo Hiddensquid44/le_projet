@@ -61,7 +61,7 @@ public class Circuit {
         List<Interrupteur> inputs = new ArrayList();
         List<Composant> inputs_1 = new ArrayList<>();
         inputs_1.addAll(composants);
-        inputs_1.removeIf(c -> c.getType() != "Interrupteur");
+        inputs_1.removeIf(c -> c.getType() != "Interrupteur");  //Nous savons que c'est plus ou moins un "if" mais nous n'avons pas trouvé de meilleure solution
         for (Composant composant : inputs_1
         ) {
             inputs.add((Interrupteur)composant);
@@ -73,7 +73,7 @@ public class Circuit {
         List<Vanne> outputs=new ArrayList();
         List<Composant> outputs_1 = new ArrayList<>();
         outputs_1.addAll(composants);
-        outputs_1.removeIf(c -> c.getType() != "Vanne");
+        outputs_1.removeIf(c -> c.getType() != "Vanne");    //Nous savons que c'est plus ou moins un "if" mais nous n'avons pas trouvé de meilleure solution
         for (Composant composant : outputs_1
         ) {
             outputs.add((Vanne)composant);
