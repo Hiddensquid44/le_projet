@@ -1,5 +1,7 @@
 package composants;
 
+import signaux.SignalLogique;
+
 public class And extends Porte2Entrees{
     public And(Composant In1, Composant In2){
         if (In1!=null){
@@ -30,5 +32,10 @@ public class And extends Porte2Entrees{
 
     public String getType() {
         return "And";
+    }
+
+    @Override
+    public SignalLogique evaluate() throws NonConnecteException {
+        return In1.evaluate().and(In2.evaluate());
     }
 }

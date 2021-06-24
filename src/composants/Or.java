@@ -1,5 +1,7 @@
 package composants;
 
+import signaux.SignalLogique;
+
 public class Or extends Porte2Entrees{
     public Or(Composant In1, Composant In2){
         if (In1!=null){
@@ -31,6 +33,15 @@ public class Or extends Porte2Entrees{
 
     public String getType() {
         return "Or";
+    }
+
+
+    public SignalLogique evaluate() throws NonConnecteException
+    {
+        if (In1 == null || In2 == null) {
+            throw new NonConnecteException();
+        }
+        return In1.evaluate().or(In2.evaluate());
     }
 
 

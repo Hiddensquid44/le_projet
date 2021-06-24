@@ -1,6 +1,6 @@
 package composants;
 
-public abstract class Composant implements Comparable <Composant>{
+public abstract class Composant implements Comparable <Composant>, Evaluable{
     public String getId(){
         return toString();
     }

@@ -1,5 +1,9 @@
 package composants;
 
+import signaux.SignalBas;
+import signaux.SignalHaut;
+import signaux.SignalLogique;
+
 public class Not extends Porte{
     public Composant In;
 
@@ -39,6 +43,15 @@ public class Not extends Porte{
             throw new NonConnecteException();
         }
         return !In.getEtat();
+    }
+
+
+    @Override
+    public SignalLogique evaluate() throws NonConnecteException {
+        if (In == null) {
+            throw new NonConnecteException();
+        }
+        return In.evaluate().not();
     }
 
     public String getType() {
