@@ -199,4 +199,10 @@ public class tests {
         System.out.println("");
         System.out.println("");
     }
+
+    @Test
+    public void CeNestPasLeSeulTest()
+    {
+        System.out.println("Comme demandé dans le sujet, 2 programmes de tests contenant des main sont présents dans les packages \"composants\" et \"signaux\".");
+    }
 }

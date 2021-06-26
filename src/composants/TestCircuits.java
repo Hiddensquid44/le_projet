@@ -13,11 +13,8 @@ public class TestCircuits {
 
     public static void main(String[] args) throws NonConnecteException {
         Interrupteur interrupteur1=new Interrupteur();
-        interrupteur1.on();
         Interrupteur interrupteur2=new Interrupteur();
-        interrupteur2.off();
         Interrupteur interrupteur3=new Interrupteur();
-        interrupteur3.on();
         Or or=new Or(interrupteur1,interrupteur2);
         Not not=new Not(interrupteur3);
         And and=new And(or,not);
