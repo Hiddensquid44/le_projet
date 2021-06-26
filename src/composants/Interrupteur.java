@@ -4,6 +4,11 @@ import signaux.SignalBas;
 import signaux.SignalHaut;
 import signaux.SignalLogique;
 
+/*
+La classe Interrupteur est publique et descend de Composant.
+
+NIIICCCOOOLLLAASSS
+*/
 public class Interrupteur extends Composant{
 
     protected SignalLogique etat;
