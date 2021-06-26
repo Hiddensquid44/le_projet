@@ -1,5 +1,7 @@
 package composants;
 
+import signaux.SignalLogique;
+
 public class Vanne extends Composant {
     public Composant In;
 
@@ -41,5 +43,10 @@ public class Vanne extends Composant {
 
     public String getType() {
         return "Vanne";
+    }
+
+    @Override
+    public SignalLogique evaluate() throws NonConnecteException {
+        return In.evaluate();
     }
 }

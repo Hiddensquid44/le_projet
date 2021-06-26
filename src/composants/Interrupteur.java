@@ -1,17 +1,21 @@
 package composants;
 
+import signaux.SignalBas;
+import signaux.SignalHaut;
+import signaux.SignalLogique;
+
 public class Interrupteur extends Composant{
 
-    protected boolean etat;
+    protected SignalLogique etat;
 
     public void on() {
-        etat = true;
+        etat = new SignalHaut();
     }
     public void off() {
-        etat = false;
+        etat = new SignalBas();
     }
     public boolean getEtat() throws NonConnecteException {
-        return etat;
+        return etat.value();
     }
 
     @Override
@@ -22,5 +26,10 @@ public class Interrupteur extends Composant{
     @Override
     public String getType() {
         return "Interrupteur";
+    }
+
+    @Override
+    public SignalLogique evaluate() throws NonConnecteException {
+        return etat;
     }
 }

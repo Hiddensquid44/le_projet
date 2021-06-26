@@ -1,10 +1,12 @@
 package composants;
 
 import circuit.Circuit;
+import signaux.SignalLogique;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class TestCircuits {
     static Composant[] tab=new Composant[7];
@@ -30,7 +32,7 @@ public class TestCircuits {
         tab[5]=not;
         Circuit circ = new Circuit("TEST",tab);
 
-        test(circ);
+        evaluate(circ);
         //TraceEtat(tab);
 
     }
@@ -67,13 +69,53 @@ public class TestCircuits {
         return etat;
     }
 
-    static void test(Circuit circ){
+    static void test(Circuit circ) throws NonConnecteException {
+        System.out.println("nomenclature :");
         System.out.println(circ.nomenclature());
-        System.out.println("description");
+        System.out.println("description :");
         circ.description();
-        System.out.println("Inputs");
-        circ.getInputs();
-        System.out.println("Outputs");
-        circ.getOutputs();
+        System.out.println("Inputs :");
+        List<Interrupteur> inputs = circ.getInputs();
+        for (Interrupteur interrupteur :
+                inputs) {
+            System.out.println(interrupteur.getId());
+        }
+        System.out.println("Outputs :");
+        List<Vanne> outputs = circ.getOutputs();
+        for (Vanne vanne :
+                outputs) {
+            System.out.println(vanne.getId());
+        }
+        System.out.println("");
+        System.out.println("On force l'interrupteur 1 à faux.");
+        inputs.get(0).off();
+        System.out.println("TraceEtat :");
+        circ.traceEtats();
+    }
+
+    static void evaluate(Circuit circ) throws NonConnecteException {
+        circ.description();
+        List<Interrupteur> inputs = circ.getInputs();
+        for (Interrupteur in :
+        inputs){
+            Scanner userInput = new Scanner(System.in);
+            String result = new String();
+            while (!result.equals("1") && !result.equals("0")){
+                System.out.println("Veuillez rentrer le niveau logique (0 ou 1) de l'interrupteur " + in.getId() + " : ");
+                result = userInput.nextLine();
+            }
+            if (result.equals("1"))  in.on();
+            else in.off();
+            System.out.println("L'interrupteur " + in.getId() + " est à l'état " + in.evaluate().toString() + ".");
+        }
+        List<Vanne> outputs = circ.getOutputs();
+        for (Vanne vanne :
+                outputs) {
+            SignalLogique vanneState = vanne.evaluate();
+            if (vanneState.value())
+                System.out.println("La vanne " + vanne.getId() + " est allumée.");
+            else
+                System.out.println("La vanne " + vanne.getId() + " est éteinte.");
+        }
     }
 }
