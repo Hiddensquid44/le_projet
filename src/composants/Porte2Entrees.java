@@ -26,7 +26,7 @@ public abstract class Porte2Entrees extends Porte{
     }
 
 
-    /*La méthode description est publique.
+    /*La méthode description() est publique.
 
     Elle renvoie un String qui décrit le composant de la façon suivante:
     Type_du_composant@ID avec la même description pour les 2 entrées du Composant

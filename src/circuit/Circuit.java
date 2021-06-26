@@ -4,6 +4,16 @@ import composants.*;
 
 import java.util.*;
 
+/*
+La classe Circuit est publique. Elle descend de Composant.
+
+Elle a 2 variables privées et globales :
+- Une List de Composants
+- Un String qui défini le nom.
+
+Le constrcuteur permet de créer un Circuit avec un nom et une liste de Composants.
+Il permet également de trier les composants selon leur ID.
+*/
 public class Circuit {
     private List<Composant> composants=new ArrayList();
     private String nom;
@@ -30,6 +40,11 @@ public class Circuit {
         Collections.sort(composants);
     }
 
+    /*
+    La méthode nomenclature() est publique et renvoie une liste de String.
+
+    Elle renvoie une liste des ID de tous les composants du circuit.
+    */
     public List<String> nomenclature(){
         List idsComposants = new ArrayList();
         for (Composant composant: composants
@@ -38,7 +53,11 @@ public class Circuit {
         }
         return idsComposants;
     }
+    /*
+    La méthode description() est publique et ne renvoie rien.
 
+    Elle affiche le nom du circuit ainsi que la description de tous les composants du circuit.
+    */
     public void description(){
         System.out.println("Nom du circuit : " + nom);
         System.out.println("Liste des composants : ");
@@ -47,7 +66,11 @@ public class Circuit {
             System.out.println(composant.description());
         }
     }
+    /*
+    La méthode trace Etat() est publique et ne renvoie rien.
 
+    Elle affiche le nom du circuit ainsi que l'ID de tous les composants avec leur Etat.
+    */
     public void traceEtats() throws NonConnecteException {
         System.out.println("Nom du circuit : " + nom);
         System.out.println("Etat des composants : ");
@@ -57,6 +80,11 @@ public class Circuit {
         }
     }
 
+    /*
+    La méthode getInputs() est publique et renvoie une liste d'Interrupteurs.
+
+    Elle renvoie une liste composée exclusivement des interrupteurs du circuit.
+    */
     public List<Interrupteur> getInputs() {
         List<Interrupteur> inputs = new ArrayList();
         List<Composant> inputs_1 = new ArrayList<>();
@@ -69,6 +97,11 @@ public class Circuit {
             return inputs;
     }
 
+    /*
+    La méthode getOutputs() est publique et renvoie une liste de Vannes.
+
+    Elle renvoie une liste composée exclusivement des vannes du circuit.
+    */
     public List<Vanne> getOutputs(){
         List<Vanne> outputs=new ArrayList();
         List<Composant> outputs_1 = new ArrayList<>();
