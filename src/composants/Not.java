@@ -64,7 +64,9 @@ public class Not extends Porte{
     }
 
     /*
-    NIIIIICCCCOOOOLLLAASSS
+    La méthode evaluate() est publique et renvoie un SignalLogique.
+
+    Elle renvoie l'état logique de la porte NOT en fonction de l'état de son entrée.
     */
     @Override
     public SignalLogique evaluate() throws NonConnecteException {

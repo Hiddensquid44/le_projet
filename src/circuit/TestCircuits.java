@@ -1,6 +1,7 @@
-package composants;
+package circuit;
 
 import circuit.Circuit;
+import composants.*;
 import signaux.SignalLogique;
 
 import java.util.ArrayList;
