@@ -32,7 +32,7 @@ public class Interrupteur extends Composant{
     }
 
     /*
-    La méthode getEtat() est publique et renvoie un String.
+    La méthode getEtat() est publique et renvoie un booléen.
 
     retourne l'état logique de l'interrupteur en booléen.
     */
@@ -60,6 +60,11 @@ public class Interrupteur extends Composant{
         return "Interrupteur";
     }
 
+    /*
+    La méthode evaluate() est publique et renvoie un SignalLogique.
+
+    Elle renvoie l'état logique de l'interrupteur.
+    */
     @Override
     public SignalLogique evaluate() throws NonConnecteException {
         return etat;
