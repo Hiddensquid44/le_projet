@@ -30,10 +30,12 @@ public class Not extends Porte{
     public Not() {
 
     }
-    /*de la façon suivante: Type_du_composant@ID avec la même description pour
-    la ou les entrées du composant (In : Type_du_composant_d_entree@ID ou
-            In1 : Type_du_composant_d_entree_1@ID In2 : Type_du_composant_d_entree_2@ID)
-    Si, l'entrée est vide, alors la fonction retourne "non connecté".
+    /*La méthode description est publique.
+
+    Elle renvoie un String qui décrit le composant de la façon suivante:
+    Type_du_composant@ID avec la même description pour l'entrée du Composant
+    (In : Type_du_composant_d_entree@ID).
+    Si, l'entrée est vide, alors la fonction retourne "non connecte".
     */
     @Override
     public String description(){
@@ -47,7 +49,12 @@ public class Not extends Porte{
         str = getId() + " in: " + str1;
         return str;
     }
+    /*
+        La méthode getEtat est publique et renvoie un booleen.
+        Dans le cas où l'entrée n'est pas connectée, elle lance NonConnecteExeption.
 
+        C'est une porte NOT, donc elle renvoie l'inverse de l'entrée.
+        */
     public boolean getEtat() throws NonConnecteException {
         if (In == null) {
             throw new NonConnecteException();
@@ -55,7 +62,9 @@ public class Not extends Porte{
         return !In.getEtat();
     }
 
-
+    /*
+    NIIIIICCCCOOOOLLLAASSS
+    */
     @Override
     public SignalLogique evaluate() throws NonConnecteException {
         if (In == null) {
@@ -63,7 +72,11 @@ public class Not extends Porte{
         }
         return In.evaluate().not();
     }
+    /*
+    La méthode getType est publique et renvoie un String.
 
+    Elle renvoie, en chaine de caractère, le type de composant. Ici, "Not".
+    */
     public String getType() {
         return "Not";
     }
