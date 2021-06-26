@@ -4,7 +4,7 @@ public abstract class SignalLogique {
 
     public abstract boolean value();
     public SignalLogique not() {
-        if (value())    return new SignalHaut();
+        if (!value())    return new SignalHaut();
         else            return new SignalBas();
     }
     public SignalLogique and(SignalLogique s) {
