@@ -7,7 +7,7 @@ import signaux.SignalLogique;
 La classe And est publique et descend de Porte2Entrees.
 
 Il y a 2 types de constructeurs: Un qui permet de créer le composant sans paramètre et un qui permet
-de le créer avec avec 2 entrées de type Composant.
+de le créer avec 2 entrées de type Composant.
 */
 public class And extends Porte2Entrees{
     public And(Composant In1, Composant In2){
@@ -24,10 +24,10 @@ public class And extends Porte2Entrees{
     }
 
     /*
-    La méthode getEtat est publique et renvoie un booleen.
+    La méthode getEtat() est publique et renvoie un booléen.
     Dans le cas où une des 2 entrées n'est pas connectée, elle lance NonConnecteExeption.
 
-    C'est une porte AND, donc si les 2 entrées sont à true, la sortie passe à true.
+    C'est une porte AND, donc si les 2 entrées sont à true (l.38), la sortie passe à true.
     Sinon, elle passe à false.
     */
     public boolean getEtat() throws NonConnecteException {
@@ -45,7 +45,7 @@ public class And extends Porte2Entrees{
     }
 
     /*
-    La méthode getType est publique et renvoie un String.
+    La méthode getType() est publique et renvoie un String.
 
     Elle renvoie, en chaine de caractère, le type de composant. Ici, "And".
     */
@@ -54,9 +54,12 @@ public class And extends Porte2Entrees{
     }
 
     /*
-    La méthode evaluate est publique et renvoie un SignalLogique.
+    La méthode evaluate() est publique.
 
-    NIIIICCOOOLLLAASS
+    Elle renvoie le SignalLogique correspondant au résultat
+    de la méthode and() appliquée sur ses 2 entrées.
+
+    Elle remplace la méthode getEtat() qui devient obolète dans la partie 4 du projet.
     */
     @Override
     public SignalLogique evaluate() throws NonConnecteException {

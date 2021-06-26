@@ -1,5 +1,12 @@
 package signaux;
 
+/*
+La classe SignalLogique est publique et abstraite.
+
+Les méthodes logiques not(), and(SignalLogique s) et or(SignalLogique s) sont implémentées
+ici car elles ne dépendent pas de la valeur du SignalLogique comme elles appellent la méthode
+value() retournant la valeur du SignalLogique.
+*/
 public abstract class SignalLogique {
 
     public abstract boolean value();
