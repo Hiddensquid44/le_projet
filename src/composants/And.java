@@ -59,7 +59,7 @@ public class And extends Porte2Entrees{
     Elle renvoie le SignalLogique correspondant au résultat
     de la méthode and() appliquée sur ses 2 entrées.
 
-    Elle remplace la méthode getEtat() qui devient obolète dans la partie 4 du projet.
+    Elle remplace la méthode getEtat() qui devient obsolète dans la partie 4 du projet.
     */
     @Override
     public SignalLogique evaluate() throws NonConnecteException {
