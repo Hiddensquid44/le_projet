@@ -29,7 +29,8 @@ public class Vanne extends Composant {
         In = in;
     }
 
-    /*La méthode description est publique.
+    /*
+    La méthode description est publique.
 
     Elle renvoie un String qui décrit le composant de la façon suivante:
     Type_du_composant@ID avec la même description pour l'entrée du Composant
@@ -72,7 +73,9 @@ public class Vanne extends Composant {
     }
 
     /*
-    NIIIIICCCCOOOOLLLAASSS
+    La méthode evaluate() est publique et renvoie un SignalLogique.
+
+    Elle renvoie l'état logique de la vanne en fonction de l'état de son entrée.
     */
     @Override
     public SignalLogique evaluate() throws NonConnecteException {
