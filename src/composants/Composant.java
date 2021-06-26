@@ -9,7 +9,7 @@ Toutes les classes qui descendent de Composant dovent contenir:
 
 - Une méthode publique getType qui renvoie un String représentant le type du composant.
 
-- Une méthode publique et abstraite description qui renvoie un String qui décrit
+- Une méthode publique description qui renvoie un String qui décrit
 le composant.
 
 - Une méthode publique getEtat qui renvoie un booleen représentant l'état du composant
