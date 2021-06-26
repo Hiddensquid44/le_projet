@@ -1,5 +1,10 @@
 package composants;
 
+/*
+La classe Porte2Entrees est publique et abstraite. Elle descend de Composant.
+
+Elle a 2 variables publiques et globales de type Composant qui correspondent aux 2 entrées des composants.
+*/
 public abstract class Porte2Entrees extends Porte{
     public Composant In1;
     public Composant In2;
@@ -20,6 +25,14 @@ public abstract class Porte2Entrees extends Porte{
         In2 = in2;
     }
 
+
+    /*La méthode description est publique.
+
+    Elle renvoie un String qui décrit le composant de la façon suivante:
+    Type_du_composant@ID avec la même description pour les 2 entrées du Composant
+    (In1 : Type_du_composant_d_entree_1@ID_1 et In1 : Type_du_composant_d_entree_2@ID_2).
+    Si, une entrée est vide, alors la fonction retourne "non connecte" pour cette entrée.
+    */
     @Override
     public String description(){
         String str,str1,str2;
