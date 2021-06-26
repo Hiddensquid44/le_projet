@@ -30,12 +30,13 @@ public class Not extends Porte{
     public Not() {
 
     }
-    /*La méthode description est publique.
+    /*
+    La méthode description est publique.
 
     Elle renvoie un String qui décrit le composant de la façon suivante:
     Type_du_composant@ID avec la même description pour l'entrée du Composant
     (In : Type_du_composant_d_entree@ID).
-    Si, l'entrée est vide, alors la fonction retourne "non connecte".
+    Si l'entrée est vide, alors la fonction retourne "non connecte".
     */
     @Override
     public String description(){
@@ -50,11 +51,11 @@ public class Not extends Porte{
         return str;
     }
     /*
-        La méthode getEtat est publique et renvoie un booleen.
-        Dans le cas où l'entrée n'est pas connectée, elle lance NonConnecteExeption.
+    La méthode getEtat est publique et renvoie un booleen.
+    Dans le cas où l'entrée n'est pas connectée, elle lance NonConnecteExeption.
 
-        C'est une porte NOT, donc elle renvoie l'inverse de l'entrée.
-        */
+    C'est une porte NOT, donc elle renvoie l'inverse de l'entrée.
+    */
     public boolean getEtat() throws NonConnecteException {
         if (In == null) {
             throw new NonConnecteException();
