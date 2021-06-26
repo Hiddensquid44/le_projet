@@ -2,6 +2,12 @@ package composants;
 
 import signaux.SignalLogique;
 
+
+/*
+La classe And est publique et déscend de Porte2Entrees.
+
+Il y a 2 types de constructeurs: Un qui permet de créer le composant
+*/
 public class And extends Porte2Entrees{
     public And(Composant In1, Composant In2){
         if (In1!=null){
