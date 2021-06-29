@@ -26,7 +26,7 @@ public class TestCircuits {
         tab[5]=not;
         Circuit circ = new Circuit("TEST",tab);
 
-        evaluate(circ);
+        circ.evaluate();
         //TraceEtat(tab);
 
     }
@@ -85,31 +85,5 @@ public class TestCircuits {
         inputs.get(0).off();
         System.out.println("TraceEtat :");
         circ.traceEtats();
-    }
-
-    static void evaluate(Circuit circ) throws NonConnecteException {
-        circ.description();
-        List<Interrupteur> inputs = circ.getInputs();
-        for (Interrupteur in :
-        inputs){
-            Scanner userInput = new Scanner(System.in);
-            String result = new String();
-            while (!result.equals("1") && !result.equals("0")){
-                System.out.println("Veuillez rentrer le niveau logique (0 ou 1) de l'interrupteur " + in.getId() + " : ");
-                result = userInput.nextLine();
-            }
-            if (result.equals("1"))  in.on();
-            else in.off();
-            System.out.println("L'interrupteur " + in.getId() + " est à l'état " + in.evaluate().toString() + ".");
-        }
-        List<Vanne> outputs = circ.getOutputs();
-        for (Vanne vanne :
-                outputs) {
-            SignalLogique vanneState = vanne.evaluate();
-            if (vanneState.value())
-                System.out.println("La vanne " + vanne.getId() + " est allumée.");
-            else
-                System.out.println("La vanne " + vanne.getId() + " est éteinte.");
-        }
     }
 }

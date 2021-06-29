@@ -1,6 +1,7 @@
 package circuit;
 
 import composants.*;
+import signaux.SignalLogique;
 
 import java.util.*;
 
@@ -14,7 +15,7 @@ Elle a 2 variables privées et globales :
 Le constrcuteur permet de créer un Circuit avec un nom et une liste de Composants.
 Il permet également de trier les composants selon leur ID.
 */
-public class Circuit {
+public class Circuit implements Evaluable{
     private List<Composant> composants=new ArrayList();
     private String nom;
 
@@ -112,5 +113,33 @@ public class Circuit {
             outputs.add((Vanne)composant);
         }
         return outputs;
+    }
+
+    @Override
+    public SignalLogique evaluate() throws NonConnecteException {
+        this.description();
+        List<Interrupteur> inputs = this.getInputs();
+        for (Interrupteur in :
+                inputs){
+            Scanner userInput = new Scanner(System.in);
+            String result = new String();
+            while (!result.equals("1") && !result.equals("0")){
+                System.out.println("Veuillez rentrer le niveau logique (0 ou 1) de l'interrupteur " + in.getId() + " : ");
+                result = userInput.nextLine();
+            }
+            if (result.equals("1"))  in.on();
+            else in.off();
+            System.out.println("L'interrupteur " + in.getId() + " est à l'état " + in.evaluate().toString() + ".");
+        }
+        List<Vanne> outputs = this.getOutputs();
+        for (Vanne vanne :
+                outputs) {
+            SignalLogique vanneState = vanne.evaluate();
+            if (vanneState.value())
+                System.out.println("La vanne " + vanne.getId() + " est allumée.");
+            else
+                System.out.println("La vanne " + vanne.getId() + " est éteinte.");
+        }
+        return null;
     }
 }
