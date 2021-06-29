@@ -2,10 +2,25 @@ package circuit;
 
 import composants.*;
 import java.util.List;
+    /*
+    TestCircuits est une classe publique.
 
+    Elle permet de tester les méthodes de la classe Circuit.
+     */
 public class TestCircuits {
     static Composant[] tab=new Composant[7];
 
+    /*
+    La fonction principale est publique, statique et ne retourne rien.
+
+    Elle permet de créer un circuit:
+    - Créer les composants
+    - Remplir le tableau
+    Puis, elle permet de tester la méthode evaluate() avec ce Circuit.
+
+    Attention, si vous voulez tester un circuit différent,
+    veuillez vérifier la taille du tableau Composant ci-dessus.
+     */
     public static void main(String[] args) throws NonConnecteException {
         Interrupteur interrupteur1=new Interrupteur();
         Interrupteur interrupteur2=new Interrupteur();
@@ -25,11 +40,20 @@ public class TestCircuits {
         Circuit circ = new Circuit("TEST",tab);
 
         circ.evaluate();
-        //TraceEtat(tab);
+        test(circ);
+        //traceEtat(tab);
 
     }
 
-    public static void TraceEtat(Composant[] tab) throws NonConnecteException {
+    /*
+    traceEtat est une méthode publique et statique.
+
+    Elle n'est plus utilisée depuis que la méthode evaluate() de la classe Ciruit l'a remplacée.
+
+    Elle récupère les Vannes du circuit passé en paramètre, calcule l'état de chaque Vanne
+    et imprime le résultat dans le terminal.
+     */
+    public static void traceEtat(Composant[] tab) throws NonConnecteException {
         Composant[] tab_travail=new Composant[tab.length], tab_copy=tab;
         boolean etat_Vanne=true;
         int j=0;
@@ -46,12 +70,21 @@ public class TestCircuits {
             tab_travail[j+i]=tab_copy[i];
         }
         for(int i=0;i<j;i++){
-            etat_Vanne=CalculateEtat(tab_travail[i]);
+            etat_Vanne=calculateEtat(tab_travail[i]);
             System.out.println("La vanne numéro " + (i+1) + " est à l'état " + etat_Vanne);
         }
     }
 
-    public static boolean CalculateEtat(Composant composant) throws NonConnecteException {
+    /*
+    calculateEtat est une méthode publique et statique qui renvoie un booléen.
+
+    Elle n'est plus utilisée depuis que la méthode evaluate() a remplacé la méthode traceEtat().
+
+    Elle calcule l'état d'un composant en utilisant sa méthode getEtat() et le retourne (booléen).
+    Si elle attrape une exception du type NonConnecteException,
+    elle imprime la trace de l'erreur dans le terminal.
+     */
+    public static boolean calculateEtat(Composant composant) throws NonConnecteException {
         boolean etat=false;
         try{
             etat = composant.getEtat();
@@ -61,6 +94,12 @@ public class TestCircuits {
         return etat;
     }
 
+    /*
+    test() est une méthode statique qui ne renvoie rien.
+
+    Elle imprime dans le terminal les méthode nomenclature(), description(), getInputs(), getOutputs()
+    et traceEtat() de la classe circuit.
+     */
     static void test(Circuit circ) throws NonConnecteException {
         System.out.println("nomenclature :");
         System.out.println(circ.nomenclature());
