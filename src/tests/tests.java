@@ -5,6 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class tests {
+
+    /*
+    TestInfoPorteAnd est une méthode de test publique.
+
+    Elle test la fonction description d'une porte And, imprime le résultat dans le terminal
+    et lance une erreur si le résultat n'est pas celui attendu.
+     */
     @Test
     public void TestInfoPorteAnd() {
         Or or = new Or();
@@ -16,6 +23,12 @@ public class tests {
         assertEquals(wanted, desc);
     }
 
+    /*
+    TestInfoPorteOr est une méthode de test publique.
+
+    Elle test la méthode description() d'une porte Or, imprime le résultat dans le terminal
+    et lance une erreur si le résultat n'est pas celui attendu.
+     */
     @Test
     public void TestInfoPorteOr() {
         Not not = new Not();
@@ -27,6 +40,12 @@ public class tests {
         assertEquals(wanted, desc);
     }
 
+    /*
+    TestInfoPorteNot est une méthode de test publique.
+
+    Elle test la méthode description() d'une porte Not, imprime le résultat dans le terminal
+    et lance une erreur si le résultat n'est pas celui attendu.
+     */
     @Test
     public void TestInfoPorteNot() {
         And and = new And();
@@ -37,6 +56,12 @@ public class tests {
         assertEquals(wanted, desc);
     }
 
+    /*
+    TestInfoPorteVanne est une méthode de test publique.
+
+    Elle test la méthode description() d'une porte Vanne, imprime le résultat dans le terminal
+    et lance une erreur si le résultat n'est pas celui attendu.
+     */
     @Test
     public void TestInfoVanne() {
         And and = new And();
@@ -48,6 +73,13 @@ public class tests {
         assertEquals(wanted, desc);
     }
 
+    /*
+    TestGetEtatPorteAnd est une méthode de test publique.
+
+    Elle test la méthode getEtat() d'une porte And en essayant toutes les combinaisons
+    d'entrées possibles, imprime le résultat dans le terminal
+    et lance une erreur si le résultat n'est pas celui attendu.
+     */
     @Test
     public void TestGetEtatAnd(){
         Boolean etatAnd=false;
@@ -108,7 +140,13 @@ public class tests {
         System.out.println("");
     }
 
+    /*
+    TestGetEtatPorteOr est une méthode de test publique.
 
+    Elle test la méthode getEtat() d'une porte Or en essayant toutes les combinaisons
+    d'entrées possibles, imprime le résultat dans le terminal
+    et lance une erreur si le résultat n'est pas celui attendu.
+     */
     @Test
     public void TestGetEtatOr(){
         Boolean etatOr=false;
@@ -167,6 +205,13 @@ public class tests {
         System.out.println("");
     }
 
+    /*
+    TestGetEtatPorteNot est une méthode de test publique.
+
+    Elle test la méthode getEtat() d'une porte Not en essayant toutes les combinaisons
+    d'entrées possibles, imprime le résultat dans le terminal
+    et lance une erreur si le résultat n'est pas celui attendu.
+     */
     @Test
     public void TestGetEtatNot(){
         Boolean etatNot=true;
@@ -200,6 +245,11 @@ public class tests {
         System.out.println("");
     }
 
+    /*
+    Si vous lisez ces lignes,
+    Je ne vous fait pas l'affront de commenter ce test, bien que l'envie y soit.
+    Bon courage !
+     */
     @Test
     public void CeNestPasLeSeulTest()
     {

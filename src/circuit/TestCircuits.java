@@ -1,9 +1,7 @@
 package circuit;
 
 import composants.*;
-import signaux.SignalLogique;
 import java.util.List;
-import java.util.Scanner;
 
 public class TestCircuits {
     static Composant[] tab=new Composant[7];
