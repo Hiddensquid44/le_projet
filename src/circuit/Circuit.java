@@ -115,6 +115,12 @@ public class Circuit implements Evaluable{
         return outputs;
     }
 
+    /*
+    La méthode evaluate() est publique et renvoie un SinalLogique.
+
+    Elle permet à l'utilisateur de définir l'état des interrupteurs du circuit,
+    puis évalue l'état des vannes du circuit avec les entrées plus tôt et imprime le résultat dans le terminal.
+    */
     @Override
     public SignalLogique evaluate() throws NonConnecteException {
         this.description();
