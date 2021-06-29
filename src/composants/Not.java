@@ -1,7 +1,5 @@
 package composants;
 
-import signaux.SignalBas;
-import signaux.SignalHaut;
 import signaux.SignalLogique;
 
 /*
@@ -65,6 +63,7 @@ public class Not extends Porte{
 
     /*
     La méthode evaluate() est publique et renvoie un SignalLogique.
+    Si l'entrée est vide, NonConnecteExeption est déclenché.
 
     Elle renvoie l'état logique de la porte NOT en fonction de l'état de son entrée.
     */

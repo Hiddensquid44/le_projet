@@ -5,7 +5,7 @@ import composants.*;
 import java.util.*;
 
 /*
-La classe Circuit est publique. Elle descend de Composant.
+La classe Circuit est publique.
 
 Elle a 2 variables privées et globales :
 - Une List de Composants

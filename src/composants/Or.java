@@ -43,6 +43,7 @@ public class Or extends Porte2Entrees{
         }
         return etat;
     }
+
     /*
      La méthode getType() est publique et renvoie un String.
 
@@ -54,6 +55,7 @@ public class Or extends Porte2Entrees{
 
     /*
     La méthode evaluate() est publique.
+    Dans le cas où une des 2 entrées n'est pas connectée, elle lance NonConnecteExeption.
 
     Elle renvoie le SignalLogique correspondant au résultat
     de la méthode or() appliquée sur ses 2 entrées.

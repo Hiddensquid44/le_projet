@@ -16,7 +16,7 @@ public class SignalBas extends SignalLogique {
     }
 
     /*
-    La méthode toString() est publique, abstraite et renvoie un String.
+    La méthode toString() est publique et renvoie un String.
 
     Elle renvoie, en chaine de caractères, l'état d'un signal logique, ici "false".
     */

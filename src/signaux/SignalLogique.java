@@ -4,7 +4,7 @@ package signaux;
 La classe SignalLogique est publique et abstraite.
 
 Les méthodes logiques not(), and(SignalLogique s) et or(SignalLogique s) ne sont pas abstraites
-car elles ne dépendent pas de la valeur du SignalLogique comme elles appellent la méthode
+car elles ne dépendent pas de la valeur du SignalLogique étant donné qu'elles appellent la méthode
 value() retournant la valeur du SignalLogique.
 */
 public abstract class SignalLogique {

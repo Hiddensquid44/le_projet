@@ -5,10 +5,10 @@ import signaux.SignalLogique;
 /*
 La classe Vanne est publique. Elle descend de Composant.
 
-Elle a 1 variables publiques et globales de type Composant qui correspondent à l'entrée du composant.
+Elle a 1 variables publique et globale de type Composant qui correspondent à l'entrée du composant.
 
 Il y a 2 types de constructeurs: Un qui permet de créer le composant sans paramètre et un qui permet
-de le créer avec 2 entrées de type Composant.
+de le créer avec 1 entrée de type Composant.
 */
 public class Vanne extends Composant {
     public Composant In;
@@ -74,6 +74,7 @@ public class Vanne extends Composant {
 
     /*
     La méthode evaluate() est publique et renvoie un SignalLogique.
+    Dans le cas où l'entrée n'est pas connectée, elle lance NonConnecteExeption.
 
     Elle renvoie l'état logique de la vanne en fonction de l'état de son entrée.
     */

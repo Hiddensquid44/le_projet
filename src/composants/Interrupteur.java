@@ -34,7 +34,7 @@ public class Interrupteur extends Composant{
     /*
     La méthode getEtat() est publique et renvoie un booléen.
 
-    retourne l'état logique de l'interrupteur en booléen.
+    Elle retourne l'état logique de l'interrupteur en booléen.
     */
     public boolean getEtat() throws NonConnecteException {
         return etat.value();
