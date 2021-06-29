@@ -101,6 +101,10 @@ public class TestCircuits {
     et traceEtat() de la classe circuit.
      */
     static void test(Circuit circ) throws NonConnecteException {
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("MÉTHODE TEST :");
         System.out.println("nomenclature :");
         System.out.println(circ.nomenclature());
         System.out.println("description :");
